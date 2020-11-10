@@ -1,0 +1,58 @@
+﻿@model MovieTicketBooking.Models.SignUpNextModel
+
+@{
+    ViewBag.Title = "UpdateTheatre";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+<div class="content">
+    <h2>Edit Theatre</h2>
+    @using (Html.BeginForm("UpdateTheatre", "Theatre", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(Model => Model.UserId)
+        @Html.HiddenFor(Model => Model.TheatreId)
+        <table cellpadding="10">
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.TheatreName)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.TheatreName, new { @MaxLength = 30 })
+                    @Html.ValidationMessageFor(model => model.TheatreName, "", new { style = "color:red;" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.Address)
+                </td>
+                <td>
+                    @Html.EditorFor(Model => Model.Address, new { @MaxLength = 50 })
+                    @Html.ValidationMessageFor(Model => Model.Address, "", new { style = "color:red;" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.NoOfScreen)
+                </td>
+                <td>
+                    @Html.EditorFor(Model => Model.NoOfScreen)
+                    @Html.ValidationMessageFor(Model => Model.NoOfScreen, "", new { style = "color:red;" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" />
+                </td>
+                <td>
+                    @Html.ActionLink("Cancel", "ViewTheatre")
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+
+
+
+
+
+

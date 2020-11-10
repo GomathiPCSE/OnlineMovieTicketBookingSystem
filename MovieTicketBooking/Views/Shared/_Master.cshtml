@@ -1,0 +1,59 @@
+﻿
+@{
+    Layout = null;
+}
+<head>
+    <link rel="stylesheet" href="~/styles/StyleSheet.css" />
+</head>
+<body>
+    <header>
+        <section>
+            <div>
+                <img src="~/Image/movie.png" alt="Icon" class="headerIcon" />
+            </div>
+            <h2>ONLINE MOVIE TICKET BOOKING</h2>
+        </section>
+        <div class="link">
+            <ul>
+                <li class="li">Erode</li>
+                @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+                    <li class="li">@Html.ActionLink("Logout", "LogOff", "Account")</li>
+                }
+                else
+                {
+                    <li class="li">@Html.ActionLink("Login", "SignIn", "Account")</li>
+                }
+
+                <li class="li">@Html.ActionLink("Sign Up", "SignUp", "Account")</li>
+                @if (HttpContext.Current.User.IsInRole("Admin"))
+                {
+
+                    <li class="elink">@Html.ActionLink("View Request", "DisplayTheatre", "Admin")</li>
+                    <li class="elink">@Html.ActionLink("User Details", "DisplayUser", "Admin")</li>
+                }
+                @if (HttpContext.Current.User.IsInRole("Theatre Manager"))
+                {
+                    <li class="elink">@Html.ActionLink("View Theatre", "ViewTheatre", "Theatre")</li>
+                }
+
+            </ul>
+        </div>
+        <div class="nav">
+            <p>
+                @Html.ActionLink("Home", "Index", "Home")
+                @Html.ActionLink("Movies", "DisplayMovie", "User")
+                @Html.ActionLink("Theatre", "DisplayTheatre", "User")
+                @Html.ActionLink("Contact Us", "", "")
+            </p>
+        </div>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        ©
+    </footer>
+
+</body>
+
