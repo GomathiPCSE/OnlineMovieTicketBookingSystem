@@ -3,7 +3,7 @@
 namespace OnlineMovieTicketBooking.Entity
 {
     public class UserContext : DbContext
-    {
+    { 
         public UserContext() : base("UserContext")
         {
 
