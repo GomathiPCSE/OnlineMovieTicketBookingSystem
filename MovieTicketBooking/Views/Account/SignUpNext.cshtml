@@ -17,7 +17,7 @@
                     @Html.LabelFor(Model => Model.TheatreName)
                 </td>
                 <td>
-                    @Html.TextBoxFor(model => model.TheatreName, new { @MaxLength = 40 })
+                    @Html.TextBoxFor(model => model.TheatreName, new { @MaxLength = 40,@placeholder = "Enter Your Theatre Name..."  })
                     @Html.ValidationMessageFor(model => model.TheatreName, "", new { style = "color:red;" })
                 </td>
             </tr>
@@ -26,7 +26,7 @@
                     @Html.LabelFor(Model => Model.Address)
                 </td>
                 <td>
-                    @Html.TextBoxFor(Model => Model.Address, new { @MaxLength = 50 })
+                    @Html.TextBoxFor(Model => Model.Address, new { @MaxLength = 50, @placeholder = "Enter Your City..."  })
                     @Html.ValidationMessageFor(Model => Model.Address, "", new { style = "color:red;" })
                 </td>
             </tr>
@@ -35,7 +35,7 @@
                     @Html.LabelFor(Model => Model.NoOfScreen)
                 </td>
                 <td>
-                    @Html.TextBoxFor(Model => Model.NoOfScreen, new { @MaxLength = 2 })
+                    @Html.TextBoxFor(Model => Model.NoOfScreen, new { @MaxLength = 2 ,@placeholder = "Enter Your Number of screen..." })
                     @Html.ValidationMessageFor(Model => Model.NoOfScreen, "", new { style = "color:red;" })
                 </td>
             </tr>

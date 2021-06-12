@@ -31,7 +31,13 @@ namespace MovieTicketBooking.Controllers
         public ActionResult ViewMovie(int id)
         {
             IEnumerable<Movie> movie = movieBl.GetMovie(id);
-            return View(movie);
+            List<MovieModel> displayMovie = new List<MovieModel>();
+            foreach(var result in movie)
+            {
+                MovieModel movieModel = AutoMapper.Mapper.Map<Movie, MovieModel>(result);
+                displayMovie.Add(movieModel);
+            }
+            return View(displayMovie);
         }
         public ActionResult DisplayMovie()
         {

@@ -1,12 +1,121 @@
 ﻿section {
-    width: 26%;
+    width: 30%;
     float: left;
-    margin-left: 2%;
+}
+
+.backgroundImage {
+    position: absolute;
+    margin-top: 11.8%;
+}
+
+.account {
+    width: 35%;
+    position: absolute;
+    align-content: center;
+    margin-top: 25%;
+    margin-left: 34%;
+    border: 3px solid #f1f1f1;
+    background-color: whitesmoke;
+}
+
+.label {
+    position: absolute;
+    margin-left: 10%;
+}
+
+.input {
+    position: relative;
+    margin-left: 48%;
+}
+
+.heading {
+    position: absolute;
+    height: 48px;
+    margin-left: 34%;
+    background-color: gray;
+    font-size: 24px;
+    margin-top: 22%;
+    width: 35.5%;
+}
+
+    .heading b {
+        color: darkblue;
+        margin-left: 38%
+    }
+
+.submitButton {
+    position: absolute;
+    height: 30px;
+    width: 20%;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    margin-left: 40%;
+}
+
+.resetButton {
+    position: relative;
+    height: 30px;
+    width: 20%;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    margin-left: 70%;
+}
+
+.textBox {
+    width: 80%;
+    height: 25px;
+}
+
+.fontSize {
+    font-size: 17px;
+}
+
+.accountLink {
+    margin-left: 28%;
+    font-style: italic;
+}
+
+    .accountLink a {
+        text-decoration: none;
+    }
+
+i a {
+    margin-left: 36%;
+    text-decoration: none;
+}
+
+.errorLabel {
+    height: 5px;
+}
+
+.passwordRequirement {
+    position: relative;
+    margin-left: 42%;
+    font-size: small;
+}
+
+.validationMessage {
+    position: relative;
+    margin-left: 48%;
+    color: red;
+    font-style: oblique;
+    font-size: small;
+}
+
+body {
 }
 
 .headerIcon {
-    width: 26%;
+    width: 30%;
+    height: 17%;
     float: left;
+}
+
+.headingMovie {
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 15%;
+    color: deepskyblue;
 }
 
 .li {
@@ -14,10 +123,15 @@
     width: 6%;
     margin-top: 6%;
     display: inline;
+    font-size: 105%;
 }
 
 li a {
     font-size: 105%;
+    text-decoration: none;
+}
+
+.Submit a {
     text-decoration: none;
 }
 
@@ -30,10 +144,10 @@ li a {
 
 h2 {
     color: darkblue;
+    font-size: 22px;
 }
 
 .nav {
-    margin-left: 0px;
     background-color: yellowgreen;
     color: black;
     width: 100%;
@@ -56,14 +170,21 @@ a:hover {
 
 .content {
     position: absolute;
-    margin-top: 15%;
+    margin-top: 20%;
     margin-left: 35%;
 }
 
+.adminContent {
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 28%;
+}
+
+
 .contentMovie {
     position: absolute;
-    margin-top: 15%;
-    margin-left: 4%;
+    margin-top: 20%;
+    margin-left: 1%;
 }
 
 .theatre {
@@ -110,9 +231,8 @@ footer {
 }
 
 .LeftDiv {
-    width: 80%;
     position: absolute;
-    margin-left: 20%;
+    margin-left: 30%;
 }
 
 .movie {
@@ -124,11 +244,65 @@ footer {
     margin-left: 30%;
 }
 
+.CentreDiv {
+    position: absolute;
+    margin-left: 38%;
+}
+
 .RightDiv {
     position: relative;
-    margin-left: 70%;
+    margin-left: 60%;
 }
 
 .city {
     font-size: 80%;
+}
+
+.reset {
+    margin-right: 1%;
+}
+
+.requirement {
+    font-size: small;
+    font-family: Arial;
+}
+
+.movieDiv {
+    position: absolute;
+    margin-top: 18%;
+    margin-left: 5%;
+    background-color: whitesmoke;
+    width: 90%;
+    height: 700px;
+}
+
+.movieLeft {
+    position:absolute;
+    width: 25%;
+    border: inset;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.userMovie {
+    position: relative;
+    margin-top: 5%;
+    margin-left: 32%;
+}
+.labelFilter {
+    height: 40px;
+    background-color: wheat;
+    padding-top: 15px;
+    padding-left:80px;
+    font-style: initial;
+    font-size: 20px;
+   color:darkblue;
+}
+.filter {
+    background-color:whitesmoke;
+    padding-left:80px;
+    padding-top: 15px;
+    font-style: initial;
+    font-size: 15px medium;
+    color: black;
+    border:inset;
 }

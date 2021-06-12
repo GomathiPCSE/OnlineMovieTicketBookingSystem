@@ -4,18 +4,24 @@
     ViewBag.Title = "DisplayTheatre";
     Layout = "~/Views/Shared/_Master.cshtml";
 }
-<h2 class="content">Movie Ticket Booking</h2>
+<h2 class="headingMovie">Movie Ticket Booking</h2>
+<br />
+<br />
 <div class="mainDiv">
     @foreach (MovieTicketBooking.Models.SignUpNextModel theatre in Model)
     {
-        <div class="LeftDiv">
-            <p>
-                <b>@theatre.TheatreName</b>  <br />
-                <span class="city">@theatre.Address</span>
-            </p>
-        </div>
-        <div class="RightDiv">
-            <p> @Html.ActionLink("Book", "ViewMovie", "User", new { id = theatre.TheatreId }, null) </p> <br />
-        </div>
+            <div class="LeftDiv">
+                <img src="~/Image/icon.jpg" alt="Icon" height="60px" />
+            </div>
+            <div class="CentreDiv">
+                <p>
+                    <b>@theatre.TheatreName</b>  <br />
+                    <span class="city">@theatre.Address</span>
+                </p>
+            </div>
+            <div class="RightDiv">
+                <p class="Submit"> @Html.ActionLink("Book", "ViewMovie", "User", new { id = theatre.TheatreId}, null) </p> <br />
+            </div>
+        <br />
     }
 </div>

@@ -108,6 +108,24 @@ namespace MovieTicketBooking.Controllers
             }
             return View();
         }
+        public JsonResult IsAlreadySignedUp(string MailId)
+        {
+            UserAccount user = userBl.AlreadySignedUp(MailId);
+
+            bool status;
+            if (user != null)
+            {
+                //Already registered  
+                status = false;
+            }
+            else
+            {
+                //Available to use  
+                status = true;
+            }
+            return Json(status, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult LogOff()
         {
             FormsAuthentication.SignOut();

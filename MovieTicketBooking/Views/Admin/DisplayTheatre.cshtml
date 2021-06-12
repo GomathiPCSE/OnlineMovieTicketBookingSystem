@@ -5,16 +5,16 @@
     ViewBag.Title = "DisplayTheatre";
     Layout = "~/Views/Shared/_Master.cshtml";
 }
+<h2 class="headingMovie">Theatre Request</h2>
+<div class="adminContent">
 
-<div class="content">
-    <h2 class="heading">Theatre Request</h2>
-    <table cellspacing="0" border="1">
+    <table cellspacing="15">
         <tr>
             <th>Theatre Id </th>
             <th>Theatre Name </th>
             <th> Address</th>
-            <th>NoOfScreen</th>
             <th>Status</th>
+            <th>A/R</th>
         </tr>
         @foreach (MovieTicketBooking.Models.SignUpNextModel theatre in Model)
         {
@@ -23,7 +23,7 @@
                 <td>@theatre.TheatreName</td>
                 <td>@theatre.Address</td>
                 <td>@theatre.Status</td>
-                <td>
+                <td class="Submit">
                     @Html.ActionLink("Accept", "AcceptTheatre", new { id = theatre.TheatreId })
                     | @Html.ActionLink("Reject", "DeleteTheatre", new { id = theatre.TheatreId },
 

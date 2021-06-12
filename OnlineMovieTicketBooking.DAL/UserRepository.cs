@@ -13,6 +13,7 @@ namespace OnlineMovieTicketBooking.DAL
         IEnumerable<UserAccount> DisplayUser();
         UserAccount GetUserById(int userId);
         void DeleteUser(UserAccount user);
+        UserAccount AlreadySignedUp(string MailId);
     }
     public class UserRepository : IUserRepository
     {
@@ -70,6 +71,14 @@ namespace OnlineMovieTicketBooking.DAL
                 SqlParameter UserId = new SqlParameter("@UserId", user.UserId);
                 var data = userContext.Database.ExecuteSqlCommand("UserAccount_Delete @UserId", UserId);
                 userContext.SaveChanges();
+            }
+        }
+        public UserAccount AlreadySignedUp(string MailId)
+        {
+            using (UserContext userContext = new UserContext())
+            {
+                UserAccount user = userContext.Users.Where(model => model.MailId == MailId).SingleOrDefault();
+                return user;
             }
         }
     }

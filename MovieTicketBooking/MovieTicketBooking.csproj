@@ -106,20 +106,29 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Image\bc.gif" />
+    <Content Include="Image\bg2.jpg" />
+    <Content Include="Image\emperor.png" />
+    <Content Include="Image\emperor2.png" />
+    <Content Include="Image\icon.jpg" />
     <Content Include="Image\master.jpg" />
     <Content Include="Image\master1.jpg" />
     <Content Include="Image\master3.jpg" />
     <Content Include="Image\movie.png" />
+    <Content Include="Image\movieTicket.jpg" />
+    <Content Include="Image\seeingMovie.jpg" />
     <Content Include="Image\soorarai potru.jpg" />
     <Content Include="Image\surya.jpg" />
     <Content Include="Image\surya1.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Image\theatreImage.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Styles\StyleSheet.css" />
     <Content Include="Web.config" />
@@ -179,6 +188,7 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Admin\DisplayTheatre.cshtml" />
+    <Content Include="Scripts\jquery.validate.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

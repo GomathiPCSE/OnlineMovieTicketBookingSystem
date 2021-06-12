@@ -5,42 +5,46 @@
     Layout = "~/Views/Shared/_Master.cshtml";
 }
 
-<div class="content">
-    <h2 class="heading">SignIn</h2>
-    <h3>@ViewBag.message</h3>
-
+<div class="heading"><b>SignIn</b></div>
+<div class="account">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <br />
     @using (Html.BeginForm("SignIn", "Account", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
-        <table cellpadding="10">
-            <tr>
-                <td>
-                    @Html.LabelFor(Model => Model.MailId)
-                </td>
-                <td>
-                    @Html.TextBoxFor(Model => Model.MailId, new { @MaxLength = 50 })
-                    @Html.ValidationMessageFor(Model => Model.MailId, "", new { style = "color:red;" })
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.LabelFor(Model => Model.Password)
-                </td>
-                <td>
-                    @Html.PasswordFor(Model => Model.Password, new { @MaxLength = 20 })
-                    @Html.ValidationMessageFor(Model => Model.Password, "", new { style = "color:red;" })
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="submit" />
-                </td>
-                <td>
-                    <input type="reset" value="Reset" />
-                </td>
-            </tr>
-        </table>
+        <div>
+            <div class="label">
+                @Html.LabelFor(Model => Model.MailId, new { @class = "fontSize" })
+            </div>
+            <div class="input">
+                @Html.TextBoxFor(Model => Model.MailId, new { @MaxLength = 50, @placeholder = "Enter Your Email Id", @class = "textBox" })
+            </div>
+            <div class="errorLabel">@Html.ValidationMessageFor(Model => Model.MailId, "", new { @class = "validationMessage" })</div>
 
+        </div><br />
+        <div>
+            <div class="label">
+                @Html.LabelFor(Model => Model.Password, new { @class = "fontSize" })
+            </div>
+            <div class="input">
+                @Html.PasswordFor(Model => Model.Password, new { @MaxLength = 20, @placeholder = "Enter Your Password", @class = "textBox" })
+            </div>
+            <div class="errorLabel">
+                @Html.ValidationMessageFor(Model => Model.Password, "", new { @class = "validationMessage" })
+            </div>
+        </div>
+        <br />
+        <div>
+            <input type="submit" class="submitButton" value="SignIn" />
+        </div>
+        <div>
+            <input type="reset" class="resetButton" value="Reset" />
+        </div>
+        <br />
+        <div><i>@Html.ActionLink("Forgot Password?", "", "Home")</i></div><br />
+        <div class="accountLink">Don't have an account? @Html.ActionLink("Register", "SignUp", "Account")</div>
     }
 </div>
 

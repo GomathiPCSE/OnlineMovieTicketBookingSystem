@@ -4,88 +4,99 @@
     ViewBag.Title = "SignUp";
     Layout = "~/Views/Shared/_Master.cshtml";
 }
-<div class="content">
-    <h2 class="heading">SignUp</h2>
+<div class="heading"><b>SignUp</b></div>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<div class="account">
+
     <h2>@ViewBag.message</h2>
-    @Html.ValidationSummary(false, "", new { style = "color:red;" })
+    @Html.ValidationSummary(true, "", new { style = "color:red;" })
 
     @using (Html.BeginForm("SignUp", "Account", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
-        <table cellpadding="10">
-            <tr>
-                <td>
-                    @Html.LabelFor(Model => Model.FirstName)
-                </td>
-                <td>
-                    @Html.TextBoxFor(model => model.FirstName, new { @MaxLength = 30 })
-                    @Html.ValidationMessageFor(model => model.FirstName, "", new { style = "color:red;" })
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.LabelFor(Model => Model.LastName)
-                </td>
-                <td>
-                    @Html.TextBoxFor(Model => Model.LastName, new { @MaxLength = 30 })
-                    @Html.ValidationMessageFor(Model => Model.LastName, "", new { style = "color:red;" })
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.LabelFor(Model => Model.MobileNumber)
-                </td>
-                <td>
-                    @Html.TextBoxFor(Model => Model.MobileNumber, new { @MaxLength = 10 })
-                    @Html.ValidationMessageFor(Model => Model.MobileNumber, "", new { style = "color:red;" })
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.LabelFor(Model => Model.MailId)
-                </td>
-                <td>
-                    @Html.TextBoxFor(Model => Model.MailId, new { @MaxLength = 50 })
-                    @Html.ValidationMessageFor(Model => Model.MailId, "", new { style = "color:red;" })
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.LabelFor(Model => Model.Password)
-                </td>
-                <td>
-                    @Html.PasswordFor(Model => Model.Password, new { @MaxLength = 20 })
-                    @Html.ValidationMessageFor(Model => Model.Password, "", new { style = "color:red;" })
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.LabelFor(Model => Model.ConfirmPassword)
-                </td>
-                <td>
-                    @Html.PasswordFor(Model => Model.ConfirmPassword, new { @MaxLength = 20 })
-                    @Html.ValidationMessageFor(Model => Model.ConfirmPassword, "", new { style = "color:red;" })
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.LabelFor(Model => Model.Role)
-                </td>
-                <td>
-                    User @Html.RadioButtonFor(Model => Model.Role, "User")
-                    Theatre Manager @Html.RadioButtonFor(Model => Model.Role, "Theatre Manager")
-                    @Html.ValidationMessageFor(Model => Model.Role, "", new { style = "color:red;" })
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="submit" />
-                </td>
-                <td>
-                    <input type="reset" value="Reset" />
-                </td>
-            </tr>
-        </table>
+        <div>
+            <div class="label">
+                @Html.LabelFor(Model => Model.FirstName, new { @class = "fontSize" })
+            </div>
+            <div class="input">
+                @Html.TextBoxFor(Model => Model.FirstName, new { @MaxLength = 50, @placeholder = "Enter Your First Name", @class = "textBox" })
+            </div>
+            <div class="errorLabel">@Html.ValidationMessageFor(Model => Model.FirstName, "", new { @class = "validationMessage" })</div>
+        </div><br />
+        <div>
+            <div class="label">
+                @Html.LabelFor(Model => Model.LastName, new { @class = "fontSize" })
+            </div>
+            <div class="input">
+                @Html.TextBoxFor(Model => Model.LastName, new { @MaxLength = 30, @placeholder = "Enter Your Last Name", @class = "textBox" })
+            </div>
+            <div class="errorLabel">@Html.ValidationMessageFor(Model => Model.LastName, "", new { @class = "validationMessage" })</div>
+        </div><br />
+        <div>
+            <div class="label">
+                @Html.LabelFor(Model => Model.MobileNumber, new { @class = "fontSize" })
+            </div>
+            <div class="input">
+                @Html.TextBoxFor(Model => Model.MobileNumber, new { @MaxLength = 10, @placeholder = "Enter Your Mobile Number", @class = "textBox" })
+            </div>
+            <div class="errorLabel">@Html.ValidationMessageFor(Model => Model.MobileNumber, "", new { @class = "validationMessage" })</div>
+        </div><br />
+        <div>
+            <div class="label">
+                @Html.LabelFor(Model => Model.MailId, new { @class = "fontSize" })
+            </div>
+            <div class="input">
+                @Html.TextBoxFor(Model => Model.MailId, new { @MaxLength = 50, @placeholder = "Enter Your Email Id", @class = "textBox" })
+            </div>
+            <div class="errorLabel">@Html.ValidationMessageFor(Model => Model.MailId, "", new { @class = "validationMessage" })</div>
+        </div><br />
+        <div>
+            <div class="label">
+                @Html.LabelFor(Model => Model.Password, new { @class = "fontSize" })
+            </div>
+            <div class="input">
+                @Html.PasswordFor(Model => Model.Password, new { @MaxLength = 20, @placeholder = "Enter Your Password", @class = "textBox" })
+            </div>
+            <div class="errorLabel">@Html.ValidationMessageFor(Model => Model.Password, "", new { @class = "validationMessage" })</div>
+            <div class="passwordRequirement">
+                <ul>
+                    <li>Atleast 6 characters</li>
+                    <li>Contain at least 1 uppercase and special character</li>
+                    <li>
+                        Contain at least 1 special character
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div class="label">
+                @Html.LabelFor(Model => Model.ConfirmPassword, new { @class = "fontSize" })
+            </div>
+            <div class="input">
+                @Html.PasswordFor(Model => Model.ConfirmPassword, new { @MaxLength = 20, @placeholder = "Enter Your Password again", @class = "textBox" })
+            </div>
+            <div class="errorLabel">@Html.ValidationMessageFor(Model => Model.ConfirmPassword, "", new { @class = "validationMessage" })</div>
+        </div><br />
+        <div>
+            <div class="label">
+                @Html.LabelFor(Model => Model.Role, new { @class = "fontSize" })
+            </div>
+            <div class="input">
+                @Html.RadioButtonFor(Model => Model.Role, "User")User
+                @Html.RadioButtonFor(Model => Model.Role, "Theatre Manager")Theatre Manager
+            </div>
+            <div class="errorLabel">@Html.ValidationMessageFor(Model => Model.Role, "", new { @class = "validationMessage" })</div>
+        </div><br />
+        <div>
+            <input type="submit" class="submitButton" value="SignUp" />
+        </div>
+        <div>
+            <input type="reset" class="resetButton" value="Reset" />
+        </div>
+        <br />
+        <div class="accountLink">Already have an account? @Html.ActionLink("SignIn", "SignIn", "Account")</div>
     }
 </div>
 

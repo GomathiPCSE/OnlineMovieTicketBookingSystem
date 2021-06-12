@@ -10,6 +10,7 @@ namespace OnlineMovieTicketBooking.BL
         int GetUserId(string mailId);
         void SignUpNext(Theatre theatre);
         UserAccount ValidateLogin(UserAccount user);
+        UserAccount AlreadySignedUp(string MailId);
         IEnumerable<UserAccount> DisplayUser();
         UserAccount GetUserById(int id);
         void DeleteUser(UserAccount user);
@@ -64,6 +65,11 @@ namespace OnlineMovieTicketBooking.BL
         public void DeleteUser(UserAccount user)
         {
             userRepository.DeleteUser(user);
+        }
+        public UserAccount AlreadySignedUp(string MailId)
+        {
+            UserAccount user = userRepository.AlreadySignedUp(MailId);
+            return user;
         }
     }
 }
